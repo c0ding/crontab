@@ -47,12 +47,15 @@ var (
 	collection *mongo.Collection
 	result     *mongo.InsertOneResult
 	resultMany *mongo.InsertManyResult
+	cursor     mongo.Cursor
 	record     *LogRecord
 	docId      objectid.ObjectID
 	logArr     []interface{}
 
 	delCond   *DeleteCond
 	delResult *mongo.DeleteResult
+
+	//cond *FindByJobName
 )
 
 func connect() {
@@ -67,13 +70,47 @@ func connect() {
 func main() {
 
 	connect()
-	delete()
+	//add()
+	findAll()
 
 }
 
+func findAll() {
+
+	// 4, 按照jobName字段过滤, 想找出jobName=job10, 找出5条
+	//cond = &FindByJobName{JobName: "jobd哈哈111"} // {"jobName": "job10"}
+
+	// 5, 查询（过滤 +翻页参数）
+
+	if cursor, err = collection.Find(context.TODO(), nil); err != nil {
+		fmt.Println(err)
+		return
+	}
+
+	// 延迟释放游标
+	defer cursor.Close(context.TODO())
+
+	// 6, 遍历结果集
+	for cursor.Next(context.TODO()) {
+		// 定义一个日志对象
+		record = &LogRecord{}
+
+		// 反序列化bson到对象
+		if err = cursor.Decode(record); err != nil {
+			fmt.Println(err)
+			return
+		}
+		// 把日志行打印出来
+		fmt.Println(*record)
+	}
+}
+
+func update() {
+
+}
 func add() {
 	record = &LogRecord{
-		"jobd哈哈111",
+		"job10",
 		"echo hello",
 		"error",
 		"hello",
