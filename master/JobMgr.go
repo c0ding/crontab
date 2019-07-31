@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"github.com/c0ding/crontab/common"
 	"github.com/coreos/etcd/clientv3"
+	"github.com/coreos/etcd/mvcc/mvccpb"
 	"time"
 )
 
@@ -54,6 +55,64 @@ func InitJobMgr() (err error) {
 	return
 }
 
+func (jobMgr *JobMgr) ListJobs() (jobList []*common.Job, err error) {
+	var (
+		dirKey  string
+		getResp *clientv3.GetResponse
+		kvPair  *mvccpb.KeyValue
+		job     *common.Job
+	)
+
+	dirKey = common.JOB_SAVE_DIR
+
+	if getResp, err = jobMgr.kv.Get(context.TODO(), dirKey, clientv3.WithPrefix()); err != nil {
+		return
+	}
+
+	jobList = make([]*common.Job, 0)
+
+	for _, kvPair = range getResp.Kvs {
+		job = &common.Job{}
+		if json.Unmarshal(kvPair.Value, job); err != nil {
+			err = nil
+			continue
+		}
+		jobList = append(jobList, job)
+
+	}
+
+	return
+
+}
+
+func (jobMgr *JobMgr) DeleteJob(name string) (oldJob *common.Job, err error) {
+
+	var (
+		jobKey    string
+		delResp   *clientv3.DeleteResponse
+		oldJobObj common.Job
+	)
+
+	// etcd中保存任务的key
+	jobKey = common.JOB_SAVE_DIR + name
+
+	// 从etcd中删除它
+	if delResp, err = jobMgr.kv.Delete(context.TODO(), jobKey, clientv3.WithPrevKV()); err != nil {
+		return
+	}
+
+	// 返回被删除的任务信息
+	if len(delResp.PrevKvs) != 0 {
+		// 解析一下旧值, 返回它
+		if err = json.Unmarshal(delResp.PrevKvs[0].Value, &oldJobObj); err != nil {
+			err = nil
+			return
+		}
+		oldJob = &oldJobObj
+	}
+	return
+}
+
 // 保存任务到etcd
 func (jobMgr *JobMgr) SaveJob(job *common.Job) (oldJob *common.Job, err error) {
 	// 把任务保存到/cron/jobs/任务名 ,值是 json 类型
@@ -86,4 +145,23 @@ func (jobMgr *JobMgr) SaveJob(job *common.Job) (oldJob *common.Job, err error) {
 	}
 	return
 
+}
+
+func (jobMgr *JobMgr) KillJob(name string) (err error) {
+	var (
+		killKey            string
+		leaseGrantResponse *clientv3.LeaseGrantResponse
+		leaseId            clientv3.LeaseID
+	)
+	killKey = common.JOB_KILLER_DIR + name
+	if leaseGrantResponse, err = jobMgr.lease.Grant(context.TODO(), 1); err != nil {
+		return
+	}
+
+	leaseId = leaseGrantResponse.ID
+	if _, err = jobMgr.kv.Put(context.TODO(), killKey, "", clientv3.WithLease(leaseId)); err != nil {
+		return
+	}
+
+	return
 }
