@@ -1,6 +1,9 @@
 package common
 
-import "encoding/json"
+import (
+	"encoding/json"
+	"strings"
+)
 
 type Job struct {
 	Name     string `json:"name"`      //任务名
@@ -14,6 +17,11 @@ type Response struct {
 	Errno int         `json:"errno"`
 	Msg   string      `json:"msg"`
 	Data  interface{} `json:"data"`
+}
+
+type JobEvent struct {
+	EventType int //save , delete
+	Job       *Job
 }
 
 // 应答方法
@@ -30,4 +38,38 @@ func BuildResponse(errno int, msg string, data interface{}) (resp []byte, err er
 	// 2, 序列化json
 	resp, err = json.Marshal(response)
 	return
+}
+
+// 反序列化
+func UnpackJob(value []byte) (ret *Job, err error) {
+
+	var (
+		job *Job
+	)
+
+	job = new(Job)
+	if err = json.Unmarshal(value, job); err != nil {
+		return
+	}
+	ret = job
+	return
+
+}
+
+// 任务变化事件，有两种 1）更新   2)删除任务
+func BuildJobEvent(job *Job, eventType int) *JobEvent {
+
+	return &JobEvent{
+		EventType: eventType,
+		Job:       job,
+	}
+}
+
+// 提取任务名
+func ExtractJobName(jobKey string) string {
+	return strings.TrimPrefix(jobKey, JOB_SAVE_DIR)
+}
+
+func ExtractKillerName(jobKey string) string {
+	return strings.TrimPrefix(jobKey, JOB_KILLER_DIR)
 }
