@@ -3,7 +3,7 @@ package master
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/buger/jsonparser"
+
 	"github.com/c0ding/crontab/common"
 
 	"net"
@@ -30,7 +30,6 @@ func handleJobSave(resp http.ResponseWriter, req *http.Request) {
 		job     common.Job
 		oldJob  *common.Job
 		bytes   []byte
-		result  string
 	)
 	// 1, 解析POST表单
 	if err = req.ParseForm(); err != nil {
@@ -44,11 +43,6 @@ func handleJobSave(resp http.ResponseWriter, req *http.Request) {
 		goto ERR
 	}
 	fmt.Println("1=======  ", job)
-
-	if result, err = jsonparser.GetString([]byte(postJob), "job", "name", "commond"); err != nil {
-		fmt.Println(err)
-	}
-	fmt.Println("2======  ", result)
 
 	// 4, 保存到etcd
 	if oldJob, err = G_jobMgr.SaveJob(&job); err != nil {
