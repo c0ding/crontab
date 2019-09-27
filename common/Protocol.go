@@ -2,7 +2,9 @@ package common
 
 import (
 	"encoding/json"
+	"github.com/gorhill/cronexpr"
 	"strings"
+	"time"
 )
 
 type Job struct {
@@ -22,6 +24,30 @@ type Response struct {
 type JobEvent struct {
 	EventType int //save , delete
 	Job       *Job
+}
+
+type JobSchedulePlan struct {
+	Job      *Job
+	Expr     *cronexpr.Expression //解析好的cronexpr表达式
+	NextTime time.Time            //下次调度时间
+}
+
+func BuildJobSchedulePlan(job *Job) (jobSchedulePlan *JobSchedulePlan, err error) {
+
+	var (
+		expr *cronexpr.Expression
+	)
+	if expr, err = cronexpr.Parse(job.CronExpr); err != nil {
+		return
+	}
+
+	jobSchedulePlan = &JobSchedulePlan{
+		Job:      job,
+		Expr:     expr,
+		NextTime: expr.Next(time.Now()),
+	}
+
+	return
 }
 
 // 应答方法

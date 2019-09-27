@@ -40,6 +40,9 @@ func main() {
 		time.Sleep(1 * time.Second)
 	}
 
+	if err = worker.InitScheduler(); err != nil {
+		goto ERR
+	}
 ERR:
 	fmt.Println(err)
 

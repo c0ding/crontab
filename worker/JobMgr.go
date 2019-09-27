@@ -47,10 +47,11 @@ func (jobMgr *JobMgr) watchJobs() (err error) {
 			jobEvent = common.BuildJobEvent(job, common.JOB_EVENT_SAVE)
 			//TODO:2，推送给调度模块
 			fmt.Println(jobEvent)
+			G_scheduler.PushJobEvent(jobEvent)
 		}
 	}
 
-	func() {
+	go func() {
 		watchStartRevision = getResp.Header.Revision + 1
 
 		watchChan = jobMgr.watcher.Watch(context.TODO(), common.JOB_SAVE_DIR, clientv3.WithRev(watchStartRevision))
@@ -73,7 +74,7 @@ func (jobMgr *JobMgr) watchJobs() (err error) {
 
 				//TODO:2，推送给调度模块
 				// 变化推给scheduler
-				//G_scheduler.PushJobEvent(jobEvent)
+				G_scheduler.PushJobEvent(jobEvent)
 			}
 		}
 	}()

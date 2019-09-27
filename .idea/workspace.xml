@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f4eaa88-5dc0-40d5-b162-ca71fcfb383c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/worker/Scheduler.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/Protocol.go" beforeDir="false" afterPath="$PROJECT_DIR$/common/Protocol.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/worker/JobMgr.go" beforeDir="false" afterPath="$PROJECT_DIR$/worker/JobMgr.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worker/main/worker.go" beforeDir="false" afterPath="$PROJECT_DIR$/worker/main/worker.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,14 +16,53 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/worker/main/worker.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="792">
+              <caret line="42" column="49" selection-start-line="42" selection-start-column="4" selection-end-line="42" selection-end-column="49" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/worker/JobMgr.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="496">
-              <caret line="76" column="13" lean-forward="true" selection-start-line="76" selection-start-column="13" selection-end-line="76" selection-end-column="13" />
+            <state relative-caret-position="1012">
+              <caret line="53" column="7" selection-start-line="53" selection-start-column="7" selection-end-line="53" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/worker/Scheduler.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="704">
+              <caret line="35" column="51" selection-start-line="35" selection-start-column="51" selection-end-line="35" selection-end-column="51" />
               <folding>
-                <element signature="e#16#69#0" expanded="true" />
+                <element signature="e#16#70#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/master/JobMgr.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2750">
+              <caret line="163" column="5" selection-start-line="163" selection-start-column="5" selection-end-line="163" selection-end-column="5" />
+              <folding>
+                <element signature="n#!!block;n#SaveJob#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/master/Config.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="21" selection-start-line="21" selection-end-line="21" />
             </state>
           </provider>
         </entry>
@@ -28,20 +70,63 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/common/Protocol.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="494">
-              <caret line="68" column="19" selection-start-line="68" selection-start-column="5" selection-end-line="68" selection-end-column="19" />
-              <folding>
-                <element signature="e#16#54#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="704">
+              <caret line="37" column="25" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../gorhill/cronexpr/cronexpr.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1452">
+              <caret line="171" selection-start-line="171" selection-end-line="171" />
+              <folding>
+                <element signature="e#695#1217#0" />
+                <element signature="n#!!block;n#MustParse#0" />
+                <element signature="e#1708#1725#0" />
+                <element signature="n#!!block;n#Parse#0" />
+                <element signature="e#2345#2394#0" />
+                <element signature="e#2443#2464#0" />
+                <element signature="e#2570#2703#0" />
+                <element signature="e#2663#2687#0" />
+                <element signature="e#2709#2742#0" />
+                <element signature="e#2850#2872#0" />
+                <element signature="e#2988#3010#0" />
+                <element signature="e#3133#3155#0" />
+                <element signature="e#3273#3295#0" />
+                <element signature="e#3417#3439#0" />
+                <element signature="e#3491#3609#0" />
+                <element signature="e#3582#3606#0" />
+                <element signature="e#3615#3664#0" />
+                <element signature="e#4209#4231#0" />
+                <element signature="e#4872#4897#0" />
+                <element signature="e#4924#4961#0" />
+                <element signature="e#5068#5105#0" />
+                <element signature="e#5133#5171#0" />
+                <element signature="e#5316#5354#0" />
+                <element signature="e#5486#5524#0" />
+                <element signature="e#5564#5607#0" />
+                <element signature="e#5705#5748#0" />
+                <element signature="e#5775#5812#0" />
+                <element signature="e#5918#5955#0" />
+                <element signature="e#5984#6023#0" />
+                <element signature="e#6129#6168#0" />
+                <element signature="n#!!block;n#NextN#0" />
+                <element signature="e#6983#7196#0" />
+                <element signature="e#7024#7193#0" />
+                <element signature="e#7050#7066#0" />
+                <element signature="e#7133#7149#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/master/ApiServer.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="159" column="49" selection-start-line="159" selection-start-column="49" selection-end-line="159" selection-end-column="49" />
+            <state relative-caret-position="360">
+              <caret line="149" column="25" lean-forward="true" selection-start-line="149" selection-start-column="25" selection-end-line="149" selection-end-column="25" />
               <folding>
                 <element signature="e#16#156#0" expanded="true" />
               </folding>
@@ -73,20 +158,21 @@
         <option value="$PROJECT_DIR$/master/main/master.json" />
         <option value="$PROJECT_DIR$/common/Constants.go" />
         <option value="$PROJECT_DIR$/master/JobMgr.go" />
-        <option value="$PROJECT_DIR$/master/ApiServer.go" />
         <option value="$PROJECT_DIR$/master/Config.go" />
         <option value="$PROJECT_DIR$/worker/Config.go" />
         <option value="$PROJECT_DIR$/worker/main/worker.go" />
-        <option value="$PROJECT_DIR$/common/Protocol.go" />
         <option value="$PROJECT_DIR$/worker/JobMgr.go" />
+        <option value="$PROJECT_DIR$/worker/Scheduler.go" />
+        <option value="$PROJECT_DIR$/common/Protocol.go" />
+        <option value="$PROJECT_DIR$/master/ApiServer.go" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="244" />
-    <option name="y" value="23" />
-    <option name="width" value="1028" />
-    <option name="height" value="777" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1472" />
+    <option name="y" value="99" />
+    <option name="width" value="1267" />
+    <option name="height" value="779" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -95,35 +181,7 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="crontab" type="b2602c69:ProjectViewProjectNode" />
-              <item name="crontab" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="crontab" type="b2602c69:ProjectViewProjectNode" />
-              <item name="crontab" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="crontab" type="b2602c69:ProjectViewProjectNode" />
-              <item name="crontab" type="462c0819:PsiDirectoryNode" />
-              <item name="master" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="crontab" type="b2602c69:ProjectViewProjectNode" />
-              <item name="crontab" type="462c0819:PsiDirectoryNode" />
-              <item name="worker" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -134,7 +192,7 @@
     <property name="go.gopath.indexing.explicitly.defined" value="true" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/worker/main" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -238,10 +296,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="244" y="23" width="1028" height="777" extended-state="0" />
+    <frame x="1280" y="-55" width="1920" height="1057" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2515213" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.22322159" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -254,7 +312,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.18700787" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32678822" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32554746" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -1032,16 +1090,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/master/JobMgr.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2250">
-          <caret line="163" column="5" selection-start-line="163" selection-start-column="5" selection-end-line="163" selection-end-column="5" />
-          <folding>
-            <element signature="n#!!block;n#SaveJob#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../coreos/etcd/clientv3/lease.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1710">
@@ -1078,13 +1126,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/master/Config.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/common/Constants.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
@@ -1106,13 +1147,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/worker/main/worker.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="422">
-          <caret line="40" column="5" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../coreos/etcd/etcdserver/etcdserverpb/rpc.pb.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="328">
@@ -1124,16 +1158,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
           <caret line="59" column="5" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/master/ApiServer.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="159" column="49" selection-start-line="159" selection-start-column="49" selection-end-line="159" selection-end-column="49" />
-          <folding>
-            <element signature="e#16#156#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1151,22 +1175,104 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/common/Protocol.go">
+    <entry file="file://$PROJECT_DIR$/worker/main/worker.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="68" column="19" selection-start-line="68" selection-start-column="5" selection-end-line="68" selection-end-column="19" />
-          <folding>
-            <element signature="e#16#54#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="792">
+          <caret line="42" column="49" selection-start-line="42" selection-start-column="4" selection-end-line="42" selection-end-column="49" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/worker/JobMgr.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="496">
-          <caret line="76" column="13" lean-forward="true" selection-start-line="76" selection-start-column="13" selection-end-line="76" selection-end-column="13" />
+        <state relative-caret-position="1012">
+          <caret line="53" column="7" selection-start-line="53" selection-start-column="7" selection-end-line="53" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/worker/Scheduler.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="704">
+          <caret line="35" column="51" selection-start-line="35" selection-start-column="51" selection-end-line="35" selection-end-column="51" />
           <folding>
-            <element signature="e#16#69#0" expanded="true" />
+            <element signature="e#16#70#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/master/JobMgr.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2750">
+          <caret line="163" column="5" selection-start-line="163" selection-start-column="5" selection-end-line="163" selection-end-column="5" />
+          <folding>
+            <element signature="n#!!block;n#SaveJob#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/master/Config.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/Protocol.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="704">
+          <caret line="37" column="25" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../gorhill/cronexpr/cronexpr.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1452">
+          <caret line="171" selection-start-line="171" selection-end-line="171" />
+          <folding>
+            <element signature="e#695#1217#0" />
+            <element signature="n#!!block;n#MustParse#0" />
+            <element signature="e#1708#1725#0" />
+            <element signature="n#!!block;n#Parse#0" />
+            <element signature="e#2345#2394#0" />
+            <element signature="e#2443#2464#0" />
+            <element signature="e#2570#2703#0" />
+            <element signature="e#2663#2687#0" />
+            <element signature="e#2709#2742#0" />
+            <element signature="e#2850#2872#0" />
+            <element signature="e#2988#3010#0" />
+            <element signature="e#3133#3155#0" />
+            <element signature="e#3273#3295#0" />
+            <element signature="e#3417#3439#0" />
+            <element signature="e#3491#3609#0" />
+            <element signature="e#3582#3606#0" />
+            <element signature="e#3615#3664#0" />
+            <element signature="e#4209#4231#0" />
+            <element signature="e#4872#4897#0" />
+            <element signature="e#4924#4961#0" />
+            <element signature="e#5068#5105#0" />
+            <element signature="e#5133#5171#0" />
+            <element signature="e#5316#5354#0" />
+            <element signature="e#5486#5524#0" />
+            <element signature="e#5564#5607#0" />
+            <element signature="e#5705#5748#0" />
+            <element signature="e#5775#5812#0" />
+            <element signature="e#5918#5955#0" />
+            <element signature="e#5984#6023#0" />
+            <element signature="e#6129#6168#0" />
+            <element signature="n#!!block;n#NextN#0" />
+            <element signature="e#6983#7196#0" />
+            <element signature="e#7024#7193#0" />
+            <element signature="e#7050#7066#0" />
+            <element signature="e#7133#7149#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/master/ApiServer.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="149" column="25" lean-forward="true" selection-start-line="149" selection-start-column="25" selection-end-line="149" selection-end-column="25" />
+          <folding>
+            <element signature="e#16#156#0" expanded="true" />
           </folding>
         </state>
       </provider>
